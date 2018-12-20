@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace ParagonIE\Corner\Tests;
 
 use ParagonIE\Corner\Exception;
@@ -9,7 +10,7 @@ use ParagonIE\Corner\Exception;
  */
 class FooException extends Exception
 {
-    public function __construct($message = "", $code = 0, $previous = null)
+    public function __construct(string $message = "", int $code = 0, \Throwable $previous = null)
     {
         parent::__construct($message, $code, $previous);
         $this->helpfulMessage = "This is an example of the Exception class";

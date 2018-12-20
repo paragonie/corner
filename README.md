@@ -9,7 +9,8 @@
 PHP Exceptions and Errors designed to prevent your users from sharp corners.
 Inspired by [Rust's helpful error messages](https://twitter.com/acfoltzer/status/1074813646625169408).
 
-Requires PHP 5.4 or newer. **[PHP 7.2+ is recommended](https://secure.php.net/supported-versions.php).**
+* Version 2.x: **Requires PHP 7.0 or newer.**
+* Version 1.x: Requires PHP 5.4 or newer.
 
 ## Motivation 
 

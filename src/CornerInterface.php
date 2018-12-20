@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace ParagonIE\Corner;
 
 /**
@@ -29,7 +30,7 @@ interface CornerInterface extends \Throwable
      *
      * @return string
      */
-    public function getHelpfulMessage();
+    public function getHelpfulMessage(): string;
 
     /**
      * @param int $linesBefore
@@ -37,7 +38,7 @@ interface CornerInterface extends \Throwable
      * @param int $traceWalk
      * @return string
      */
-    public function getSnippet($linesBefore = 0, $linesAfter = 0, $traceWalk = 0);
+    public function getSnippet(int $linesBefore = 0, int $linesAfter = 0, int $traceWalk = 0): string;
 
     /**
      * Returns a string containing either an email address or an https:// URL
@@ -61,7 +62,7 @@ interface CornerInterface extends \Throwable
      *
      * @return string
      */
-    public function getSupportLink();
+    public function getSupportLink(): string;
 
     /**
      * See: self::getHelpfulMessage(). This is the setter counterpart.
@@ -71,7 +72,7 @@ interface CornerInterface extends \Throwable
      * @param string $message
      * @return CornerInterface
      */
-    public function setHelpfulMessage($message);
+    public function setHelpfulMessage(string $message): CornerInterface;
 
     /**
      * See: self::getSupportLink(). This is the setter counterpart.
@@ -81,5 +82,5 @@ interface CornerInterface extends \Throwable
      * @param string $url
      * @return CornerInterface
      */
-    public function setSupportLink($url);
+    public function setSupportLink(string $url): CornerInterface;
 }

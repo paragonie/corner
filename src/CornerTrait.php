@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 namespace ParagonIE\Corner;
 
 /**
@@ -25,7 +26,7 @@ trait CornerTrait
      *
      * @return string
      */
-    public function getHelpfulMessage()
+    public function getHelpfulMessage(): string
     {
         if (empty($this->helpfulMessage)) {
             return static::HELPFUL_MESSAGE;
@@ -42,7 +43,7 @@ trait CornerTrait
      * @param int $traceWalk
      * @return string
      */
-    public function getSnippet($linesBefore = 0, $linesAfter = 0, $traceWalk = 0)
+    public function getSnippet(int $linesBefore = 0, int $linesAfter = 0, int $traceWalk = 0): string
     {
         if ($traceWalk === 0) {
             $file = new \SplFileObject($this->getFile());
@@ -101,7 +102,7 @@ trait CornerTrait
      *
      * @return string
      */
-    public function getSupportLink()
+    public function getSupportLink(): string
     {
         if (empty($this->supportLink)) {
             return static::SUPPORT_LINK;
@@ -117,7 +118,7 @@ trait CornerTrait
      * @param string $message
      * @return CornerInterface
      */
-    public function setHelpfulMessage($message)
+    public function setHelpfulMessage(string $message): CornerInterface
     {
         $this->helpfulMessage = $message;
         return $this;
@@ -131,7 +132,7 @@ trait CornerTrait
      * @param string $url
      * @return CornerInterface
      */
-    public function setSupportLink($url)
+    public function setSupportLink(string $url): CornerInterface
     {
         $this->supportLink = $url;
         return $this;

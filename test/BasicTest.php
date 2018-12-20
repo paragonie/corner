@@ -38,26 +38,33 @@ class BasicTest extends TestCase
             /** Canary string: 15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61 */
             throw new FooException('test');
         } catch (CornerInterface $ex) {
-            $this->assertFalse(
-                strpos($ex->getSnippet(0, 0), '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61')
+            $this->assertStringNotContainsString(
+                '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61',
+                $ex->getSnippet(0, 0)
             );
-            $this->assertFalse(
-                strpos($ex->getSnippet(0, 1), '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61')
+            $this->assertStringNotContainsString(
+                '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61',
+                $ex->getSnippet(0, 1)
             );
-            $this->assertNotFalse(
-                strpos($ex->getSnippet(1, 0), '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61')
+            $this->assertStringContainsString(
+                '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61',
+                $ex->getSnippet(1, 0)
             );
-            $this->assertFalse(
-                strpos($ex->getSnippet(1, 0, 1), '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61')
+            $this->assertStringNotContainsString(
+                '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61',
+                $ex->getSnippet(1, 0, 1)
             );
-            $this->assertFalse(
-                strpos($ex->getSnippet(5, 5, 1), '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61')
+            $this->assertStringNotContainsString(
+                '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61',
+                $ex->getSnippet(5, 5, 1)
             );
-            $this->assertFalse(
-                strpos($ex->getSnippet(5, 5, 2), '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61')
+            $this->assertStringNotContainsString(
+                '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61',
+                $ex->getSnippet(5, 5, 2)
             );
-            $this->assertFalse(
-                strpos($ex->getSnippet(5, 5, 3), '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61')
+            $this->assertStringNotContainsString(
+                '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61',
+                $ex->getSnippet(5, 5, 3)
             );
         }
 
@@ -68,11 +75,13 @@ class BasicTest extends TestCase
 
             /* We're adding some padding here. */
         } catch (CornerInterface $ex) {
-            $this->assertFalse(
-                strpos($ex->getSnippet(1, 1, 1), '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61')
+            $this->assertStringNotContainsString(
+                '15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61',
+                $ex->getSnippet(1, 1, 1)
             );
-            $this->assertNotFalse(
-                strpos($ex->getSnippet(1, 1, 1), 'subcall()')
+            $this->assertStringContainsString(
+                'subcall()',
+                $ex->getSnippet(1, 1, 1)
             );
         }
     }
