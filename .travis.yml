@@ -4,18 +4,11 @@ sudo: false
 matrix:
   fast_finish: true
   include:
-    - php: "7.0"
-      os: linux
     - php: "7.1"
-      os: linux
     - php: "7.2"
-      os: linux
     - php: "7.3"
-      os: linux
     - php: "nightly"
-      os: linux
     - php: "master"
-      os: linux
   allow_failures:
     - php: "nightly"
     - php: "master"
