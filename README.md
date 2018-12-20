@@ -1,5 +1,11 @@
 # Corner
 
+[![Linux Build Status](https://travis-ci.org/paragonie/corner.svg?branch=master)](https://travis-ci.org/paragonie/corner)
+[![Latest Stable Version](https://poser.pugx.org/paragonie/corner/v/stable)](https://packagist.org/packages/paragonie/corner)
+[![Latest Unstable Version](https://poser.pugx.org/paragonie/corner/v/unstable)](https://packagist.org/packages/paragonie/corner)
+[![License](https://poser.pugx.org/paragonie/corner/license)](https://packagist.org/packages/paragonie/corner)
+[![Downloads](https://img.shields.io/packagist/dt/paragonie/corner.svg)](https://packagist.org/packages/paragonie/corner)
+
 PHP Exceptions and Errors designed to prevent your users from sharp corners.
 Inspired by [Rust's helpful error messages](https://twitter.com/acfoltzer/status/1074813646625169408).
 
