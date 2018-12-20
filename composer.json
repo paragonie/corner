@@ -9,7 +9,7 @@
     }
   ],
   "autoload": {
-    "files": ["src/Throwable.php"],
+    "files": ["php5/Throwable.php"],
     "psr-4": {
       "ParagonIE\\Corner\\": "src/"
     }
