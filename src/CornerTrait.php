@@ -56,6 +56,10 @@ trait CornerTrait
             if (!isset($trace[$traceWalk])) {
                 return '';
             }
+            if (!isset($trace[$traceWalk]['file'])) {
+                // We cannot excerpt this file.
+                return '';
+            }
             $file = new \SplFileObject((string) $trace[$traceWalk]['file']);
             /** @var int $line */
             $line = (int) ($trace[$traceWalk]['line']) - 1;
