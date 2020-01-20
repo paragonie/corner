@@ -10,7 +10,7 @@ use PHPUnit\Framework\TestCase;
  */
 class BasicTest extends TestCase
 {
-    public function testException()
+    public function testException() : void
     {
         try {
             throw new FooException('test');
@@ -21,7 +21,7 @@ class BasicTest extends TestCase
         }
     }
 
-    public function testError()
+    public function testError() : void
     {
         try {
             throw new FooError('test');
@@ -32,7 +32,7 @@ class BasicTest extends TestCase
         }
     }
 
-    public function testSnippet()
+    public function testSnippet() : void
     {
         try {
             /** Canary string: 15f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c61 */
@@ -86,7 +86,7 @@ class BasicTest extends TestCase
         }
     }
 
-    private function subcall()
+    private function subcall() : void
     {
         /** Canary string: 6115f3456a04616adc5b42f3533d41a43aa2bad7eee2e914684ec86c3b84b71c */
         throw new FooException('test');
